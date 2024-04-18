@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+    <formatVersion>7</formatVersion>
+
+    <view name="system">
+
+        <image name="logo">
+            <!-- try png -->
+            <path>./_assets/logos/silver/${system.theme}.png</path>
+            <!-- try svg -->
+            <path>./_assets/logos/silver/${system.theme}.svg</path>
+            <!-- check if lang resources exist -->
+            <path>./_assets/logos/silver/${system.theme}-${lang}.png</path>
+            <path>./_assets/logos/silver/${system.theme}-${lang}.svg</path>
+            <linearSmooth>true</linearSmooth>
+        </image>
+        <!-- custom collections logos -->
+        <image name="logo" if="{system.collection}">
+            <path>./_assets/logos/silver/collections/${system.theme}.png</path>
+            <path>./_assets/logos/silver/collections/${system.theme}.svg</path>
+            <path>./_assets/logos/silver/collections/${system.theme}-w.png</path>
+            <path>./_assets/logos/silver/collections/${system.theme}-w.svg</path>
+        </image>
+        <!-- ui items listed into region theme settings -->
+        <image name="logo" region="eu"/>
+        <image name="logo" region="br">
+            <path>./_assets/logos/silver/br/${system.theme}.png</path>
+            <path>./_assets/logos/silver/br/${system.theme}.svg</path>
+        </image>
+        <image name="logo" region="us">
+            <path>./_assets/logos/silver/us/${system.theme}.png</path>
+            <path>./_assets/logos/silver/us/${system.theme}.svg</path>
+        </image>
+        <image name="logo" region="jp">
+            <path>./_assets/logos/silver/jp/${system.theme}.png</path>
+            <path>./_assets/logos/silver/jp/${system.theme}.svg</path>
+        </image>
+
+    </view>
+
+</theme>

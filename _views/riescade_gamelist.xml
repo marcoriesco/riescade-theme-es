@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+    <formatVersion>7</formatVersion>
+    <view name="gamecarousel" tinyScreen="false" displayName="GAMELIST">
+        <gamecarousel name="gamecarousel">
+            <type>vertical_wheel</type>
+            <pos>0.34 0</pos>
+            <size>1 1</size>
+            <origin>0 0</origin>
+            <logoSize>0.15 0.270</logoSize>
+            <logoScale>1.5</logoScale>
+            <color>00000000</color>
+            <maxLogoCount>11</maxLogoCount>
+            <logoRotation>-11</logoRotation>
+            <logoRotationOrigin>3 0.5</logoRotationOrigin>
+            <logoAlignment>center</logoAlignment>
+            <scrollSound>./_assets/sounds/click.wav</scrollSound>
+            <imageSource>marquee</imageSource>
+            <zIndex>21</zIndex>
+        </gamecarousel>
+
+        <image name="gamecarouselLogo">
+            <storyboard event="activate">
+                <animation property="opacity" from="0.2" to="1" duration="0" mode="linear"/>
+                <animation property="scale" from="0.70" to="1.10" begin="0" duration="0" mode="linear"/>
+            </storyboard>
+            <storyboard event="deactivate">
+                <animation property="opacity" from="0" to="0.2" duration="0" mode="linear"/>
+                <animation property="scale" from="1.10" to="0.60" begin="0" duration="0" mode="easeOut"/>
+            </storyboard>
+            <storyboard event="scroll">
+                <animation property="opacity" from="0" to="0.2" duration="0" mode="linear"/>
+                <animation property="scale" from="1.10" to="0.60" begin="0" duration="0" mode="easeOut"/>
+            </storyboard>
+        </image>
+
+        <text name="gamecarouselLogoText">
+            <color>FFFFFFFF</color>
+            <glowColor>00000050</glowColor>
+            <glowSize>3</glowSize>
+            <glowOffset>3</glowOffset>
+            <lineSpacing>1.0</lineSpacing>
+            <fontPath>./_assets/fonts/hs.ttf</fontPath>
+            <fontSize>0.060</fontSize>
+
+            <storyboard event="activate">
+                <animation property="opacity" from="0.2" to="1" duration="0" mode="linear"/>
+                <animation property="scale" from="0.70" to="1.10" begin="0" duration="0" mode="linear"/>
+            </storyboard>
+            <storyboard event="deactivate">
+                <animation property="opacity" from="0" to="0.2" duration="0" mode="linear"/>
+                <animation property="scale" from="1.10" to="0.60" begin="0" duration="0" mode="easeOut"/>
+            </storyboard>
+            <storyboard event="scroll">
+                <animation property="opacity" from="0" to="0.2" duration="0" mode="linear"/>
+                <animation property="scale" from="1.10" to="0.60" begin="0" duration="0" mode="easeOut"/>
+            </storyboard>
+        </text>
+
+        <text name="gamecarouselLogoText" ifSubset="video_system_cinematic:Ativo">
+            <storyboard event="activate">
+                <animation property="opacity" begin="1000" from="1" to="0" duration="500" mode="linear"/>
+            </storyboard>
+            <storyboard event="deactivate">
+                <animation property="opacity" begin="1000" from="0.2" to="0" duration="500" mode="linear"/>
+            </storyboard>
+            <storyboard event="scroll">
+                <animation property="opacity" begin="1000" from="0.2" to="0" duration="500" mode="linear"/>
+            </storyboard>
+        </text>
+
+        <!-- Pointers -->
+        <image name="pointer" extra="true" ifSubset="pointer_gamelist:Ativo">
+            <origin>1 0.5</origin>
+            <pos>1.02 0.5</pos>
+            <maxSize>0.15 0.15</maxSize>
+            <path>./_assets/pointers/default.png</path>
+            <path>./_assets/pointers/$system.png</path>
+            <rotationOrigin>1 1</rotationOrigin>
+
+            <zIndex>22</zIndex>
+
+            <storyboard event="open">
+                <animation property="opacity" from="1" to="1" duration="100" autoreverse="true" begin="0" repeat="1"/>
+            </storyboard>
+
+            <storyboard event="activateNext">
+                <animation property="offsetX" to="0.02" duration="150" autoReverse="true" />
+                <!-- <animation property="rotation" to="-35" duration="100" autoReverse="true" /> -->
+            </storyboard>
+            <storyboard event="activatePrev">
+                <animation property="offsetX" to="0.02" duration="150" autoReverse="true" />
+                <!-- <animation property="rotation" to="-35" duration="100" autoReverse="true" /> -->
+            </storyboard>
+            <storyboard event="deactivateNext">
+                <animation property="x" from="1.02" to="2" duration="0" />
+            </storyboard>
+            <storyboard event="deactivatePrev">
+                <animation property="x" from="1.02" to="2" duration="0" />
+            </storyboard>
+        </image>
+
+        <!-- Overlay background -->
+        <image name="overlay" extra="true">
+            <origin>0 0</origin>
+            <pos>0 0</pos>
+            <size>1 1</size>
+            <path>./_assets/_parts/overlay_gamelist.png</path>
+            <zIndex>17</zIndex>
+        </image>
+
+        <!-- Video background -->
+        <video ifSubset="video_gamelist:Ativo" name="md_video">
+            <origin>0 0</origin>
+            <pos>0 0</pos>
+            <size>1 1</size>
+            <delay>3</delay>
+            <effect>none</effect>
+            <zIndex>16</zIndex>
+
+            <storyboard event="activate">
+                <animation property="opacity" from="0" to="1" duration="800" mode="easeIn" />
+            </storyboard>
+        </video>
+
+        <!-- Video Themes Cinematics -->
+        <video ifSubset="video_cinematic:Ativo" name="md_theme" extra="true">
+            <origin>0 0</origin>
+            <pos>0 0</pos>
+            <size>1 1</size>
+            <delay>0.1</delay>
+            <effect>none</effect>
+            <path>./../../../../../roms/$system/medium_artwork/theme/{game:stem}.mp4</path>
+            <path if="${system.collection}">./../_assets/themes/collections/{game:name}.mp4</path>
+            <zIndex>40</zIndex>
+        </video>
+
+        <!-- Video Theme Transition -->
+        <video ifSubset="video_cinematic:Ativo" name="md_video_transitions" extra="true">
+            <origin>0 0</origin>
+            <pos>0 0</pos>
+            <size>1 1</size>
+            <delay>0.1</delay>
+            <effect>none</effect>
+            <loops>0</loops>
+            <path ifSubset="video_cinematic_transition:Ativo">./../_assets/transitions/$system/{game:stem}.flv</path>
+            <zIndex>99</zIndex>
+        </video>
+
+        <!-- Background Default -->
+        <image name="background_default" extra="true">
+            <origin>0 0</origin>
+            <pos>0 0</pos>
+            <size>1 1</size>
+            <path>./_assets/_parts/default.png</path>
+            <zIndex>1</zIndex>
+        </image>
+
+        <!-- Fanart background -->
+        <image name="md_fanart">
+            <origin>0 0</origin>
+            <pos>0 0</pos>
+            <size>1 1</size>
+            <zIndex>14</zIndex>
+
+            <storyboard event="activate">
+                <animation property="opacity" from="0" to="1" duration="800" mode="easeIn" />
+            </storyboard>
+            <storyboard event="deactivate">
+                <animation property="opacity" from="1" to="0" duration="800" mode="easeIn" />
+            </storyboard>
+        </image>
+
+        <!-- Fanart Collection background -->
+        <image name="md_fanart_collection" if="${system.collection}" extra="true">
+            <origin>0 0</origin>
+            <pos>0 0</pos>
+            <size>1 1</size>
+            <path>./../_assets/arts/collections/{game:name}.jpg</path>
+            <zIndex>15</zIndex>
+
+            <storyboard event="activate">
+                <animation property="opacity" from="0" to="1" duration="800" mode="easeIn" />
+            </storyboard>
+        </image>
+
+        <!-- Cover 3D -->
+        <image if="${system.name} != 'collections'" name="md_thumbnail">
+            <origin>0 0.5</origin>
+            <pos>0.06 0.48</pos>
+            <!-- <size> 0.55</size> -->
+            <maxSize>0.3 0.55</maxSize>
+
+            <maxSize if="${system.name} == 'bigfish'">0.3 0.45</maxSize>
+            <maxSize if="${system.name} == 'tiger'">0.3 0.45</maxSize>
+            <maxSize if="${system.name} == 'snes-msu1'">0.3 0.45</maxSize>
+            <maxSize if="${system.name} == 'dreamcast'">0.3 0.45</maxSize>
+            <maxSize if="${system.name} == 'psx'">0.3 0.45</maxSize>
+
+            <maxSize if="${system.name} == '3ds'">0.3 0.4</maxSize>
+            <maxSize if="${system.name} == '3do-japan'">0.3 0.4</maxSize>
+            <maxSize if="${system.name} == 'snes'">0.3 0.4</maxSize>
+            <maxSize if="${system.name} == 'ngage'">0.3 0.4</maxSize>
+
+            <rotation>-4</rotation>
+            <zIndex>18</zIndex>
+
+            <storyboard event="activate">
+                <animation property="opacity" from="0" to="1" duration="600" mode="easeInOut" />
+                <animation property="pos" from="-0.06 0.48" to="0.06 0.48" duration="600" mode="easeInOut" />
+            </storyboard>
+
+            <storyboard event="deactivate">
+                <animation property="opacity" from="1" to="0" duration="600" mode="easeInOut" />
+                <animation property="pos" from="0.06 0.48" to="-0.06 0.48" duration="600" mode="easeInOut" />
+            </storyboard>
+
+        </image>
+
+        <!-- Logo do Sistema -->
+        <image name="logo">
+            <origin>0 0</origin>
+            <pos>0.025 0.04</pos>
+            <size>0.1 </size>
+            <scale>1</scale>
+            <zIndex>99</zIndex>
+
+            <!-- try png -->
+            <path>./_assets/logos/clean/${system.theme}.png</path>
+            <!-- try svg -->
+            <path>./_assets/logos/clean/${system.theme}.svg</path>
+            <!-- check if lang resources exist -->
+            <path>./_assets/logos/clean/${system.theme}-${lang}.png</path>
+            <path>./_assets/logos/clean/${system.theme}-${lang}.svg</path>
+            <linearSmooth>true</linearSmooth>
+        </image>
+        <!-- ui items listed into region theme settings -->
+        <image name="logo" region="eu"/>
+        <image name="logo" region="br">
+            <path>./_assets/logos/clean/br/${system.theme}.png</path>
+            <path>./_assets/logos/clean/br/${system.theme}.svg</path>
+        </image>
+        <image name="logo" region="us">
+            <path>./_assets/logos/clean/us/${system.theme}.png</path>
+            <path>./_assets/logos/clean/us/${system.theme}.svg</path>
+        </image>
+        <image name="logo" region="jp">
+            <path>./_assets/logos/clean/jp/${system.theme}.png</path>
+            <path>./_assets/logos/clean/jp/${system.theme}.svg</path>
+        </image>
+
+
+        <!-- Game Name -->
+        <text name="md_name">
+            <origin>0 0</origin>
+            <pos>0.028 0.77</pos>
+            <size>0.5 0.10</size>
+            <fontPath>./_assets/fonts/lemon.otf</fontPath>
+            <fontSize>0.044</fontSize>
+            <color>FFFFFFFF</color>
+            <glowColor>000000</glowColor>
+            <glowSize>2</glowSize>
+            <glowOffset>1</glowOffset>
+            <alignment>left</alignment>
+            <zIndex>99</zIndex>
+
+            <storyboard event="activate">
+                <animation property="opacity" from="0" to="1" duration="800" mode="easeIn" />
+            </storyboard>
+        </text>
+
+        <!-- Game md_releasedate & md_publisher -->
+        <text name="date_and_developer" extra="true">
+            <origin>0 0</origin>
+            <pos>0.035 0.86</pos>
+            <size>0.5 0.016</size>
+            <text if="!${system.collection}">{game:releaseyear}, {game:publisher}</text>
+            <text if="${system.collection}">{game:system:total} && {game:system:total} > 1 ? '{game:system:total} GAMES' : '{game:system:total} GAME'</text>
+            <fontPath>./_assets/fonts/hs.ttf</fontPath>
+            <fontSize>0.030</fontSize>
+            <color>FFFFFFFF</color>
+            <glowColor>000000</glowColor>
+            <glowSize>2</glowSize>
+            <glowOffset>1</glowOffset>
+            <alignment>left</alignment>
+            <zIndex>99</zIndex>
+
+            <storyboard event="activate">
+                <animation property="opacity" from="0" to="1" duration="800" mode="easeIn" />
+            </storyboard>
+        </text>
+
+
+        <!-- ARCADE CONFIGS -->
+        <image ifSubset="arcade_gamelist:Ativo" if="${system.name} == 'arcade'" name="md_thumbnail">
+            <zIndex>0</zIndex>
+        </image>
+
+        <image ifSubset="arcade_gamelist:Ativo" if="${system.name} == 'arcade'" name="logo">
+            <zIndex>0</zIndex>
+        </image>
+
+        <image ifSubset="arcade_gamelist:Ativo" if="${system.name} == 'arcade'" name="md_boxback">
+            <origin>0 0</origin>
+            <pos>0 0</pos>
+            <size>1 1</size>
+            <zIndex>20</zIndex>
+
+            <storyboard event="activate">
+                <animation property="opacity" from="0" to="1" duration="800" mode="easeIn" />
+            </storyboard>
+        </image>
+
+        <image ifSubset="arcade_gamelist:Ativo" if="${system.name} == 'arcade'" name="md_titleshot">
+            <origin>0 0</origin>
+            <pos>0.1 0.30</pos>
+            <size>0.37 0.485</size>
+            <zIndex>18</zIndex>
+
+            <storyboard event="activate">
+                <animation property="opacity" from="0" to="1" duration="800" mode="easeIn" />
+            </storyboard>
+        </image>
+
+        <!-- Fanart background -->
+        <image ifSubset="arcade_gamelist:Ativo" if="${system.name} == 'arcade'" name="md_fanart">
+            <pos>0.4 0</pos>
+            <size>0.6 1</size>
+        </image>
+
+        <video ifSubset="arcade_gamelist:Ativo" if="${system.name} == 'arcade'" ifSubset="video_gamelist:Ativo" name="md_video">
+            <pos>0.1 0.30</pos>
+            <size>0.37 0.485</size>
+            <delay>1</delay>
+            <zIndex>19</zIndex>
+        </video>
+
+    </view>
+
+</theme>

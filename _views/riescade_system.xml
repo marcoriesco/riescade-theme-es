@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+    <formatVersion>7</formatVersion>
+
+    <view name="system">
+        <carousel name="systemcarousel">
+            <type>vertical_wheel</type>
+            <pos>0.34 0</pos>
+            <size>1 1</size>
+            <origin>0 0</origin>
+            <logoSize>0.15 0.270</logoSize>
+            <logoScale>1.5</logoScale>
+            <color>00000000</color>
+            <maxLogoCount>11</maxLogoCount>
+            <logoRotation>-11</logoRotation>
+            <logoRotationOrigin>3 0.5</logoRotationOrigin>
+            <logoAlignment>center</logoAlignment>
+            <scrollSound>./../_assets/sounds/click.wav</scrollSound>
+            <zIndex>43</zIndex>
+        </carousel>
+
+        <text name="logoText">
+            <color>FFFFFFFF</color>
+            <glowColor>00000050</glowColor>
+            <glowSize>3</glowSize>
+            <glowOffset>3</glowOffset>
+            <lineSpacing>1.0</lineSpacing>
+            <fontPath>./_assets/fonts/hs.ttf</fontPath>
+            <fontSize>0.060</fontSize>
+
+            <storyboard event="activate">
+                <animation property="opacity" from="0.2" to="1" duration="0" mode="Linear"/>
+                <animation property="scale" from="0.70" to="1.10" begin="0" duration="0" mode="linear"/>
+            </storyboard>
+            <storyboard event="deactivate">
+                <animation property="opacity" from="0" to="0.2" duration="0" mode="Linear"/>
+                <animation property="scale" from="1.10" to="0.60" begin="0" duration="0" mode="easeOut"/>
+            </storyboard>
+            <storyboard event="scroll">
+                <animation property="opacity" from="0" to="0.2" duration="0" mode="Linear"/>
+                <animation property="scale" from="1.10" to="0.60" begin="0" duration="0" mode="easeOut"/>
+            </storyboard>
+        </text>
+
+        <text name="logoText">
+            <storyboard event="activate">
+                <animation property="opacity" begin="1000" from="1" to="0" duration="500" mode="linear"/>
+            </storyboard>
+            <storyboard event="deactivate">
+                <animation property="opacity" begin="1000" from="0.2" to="0" duration="500" mode="linear"/>
+            </storyboard>
+            <storyboard event="scroll">
+                <animation property="opacity" begin="1000" from="0.2" to="0" duration="500" mode="linear"/>
+            </storyboard>
+        </text>
+
+        <image name="logo">
+            <storyboard event="activate">
+                <animation property="opacity" from="0.2" to="1" duration="0" mode="Linear"/>
+                <animation property="scale" from="0.70" to="1.10" begin="0" duration="0" mode="linear"/>
+            </storyboard>
+            <storyboard event="deactivate">
+                <animation property="opacity" from="0" to="0.2" duration="0" mode="Linear"/>
+                <animation property="scale" from="1.10" to="0.60" begin="0" duration="0" mode="easeOut"/>
+            </storyboard>
+            <storyboard event="scroll">
+                <animation property="opacity" from="0" to="0.2" duration="0" mode="Linear"/>
+                <animation property="scale" from="1.10" to="0.60" begin="0" duration="0" mode="easeOut"/>
+            </storyboard>
+        </image>
+
+        <image name="logo">
+            <storyboard event="activate">
+                <animation property="opacity" begin="1000" from="1" to="0" duration="500" mode="linear"/>
+            </storyboard>
+            <storyboard event="deactivate">
+                <animation property="opacity" begin="1000" from="0.3" to="0" duration="500" mode="linear"/>
+            </storyboard>
+            <storyboard event="scroll">
+                <animation property="opacity" begin="1000" from="0.3" to="0" duration="500" mode="linear"/>
+            </storyboard>
+        </image>
+
+        <!-- Pointers -->
+        <image name="pointer" extra="true" ifSubset="pointer_system:Ativo">
+            <origin>1 0.5</origin>
+            <pos>1.02 0.5</pos>
+            <maxSize>0.15 0.15</maxSize>
+            <rotationOrigin>1 1</rotationOrigin>
+            <path>./_assets/pointers/default.png</path>
+            <zIndex>44</zIndex>
+
+            <storyboard>
+                <animation property="offsetX" to="0.02" duration="150" autoReverse="true" />
+                <animation property="offsetX" begin="1000" to="0.2" duration="500" mode="linear" ifSubset="video_system_cinematic:Ativo" />
+            </storyboard>
+        </image>
+
+        <!-- <screenshader name="blur" extra="true">
+            <pos>0 0</pos>
+            <size>1 1</size>
+            <path>:/shaders/blur.glsl</path>
+            <blur>5</blur>
+            <opacity>0</opacity>
+            <zIndex>11</zIndex>
+
+            <storyboard>
+                <animation property="opacity" from="0" to="1" duration="1000" mode="easeOut" />
+            </storyboard>
+        </screenshader> -->
+
+        <image name="background" extra="static">
+            <origin>0 0</origin>
+            <pos>0 0</pos>
+            <size>1 1</size>
+            <linearSmooth>true</linearSmooth>
+            <path>./_assets/themes/${system.name}/background.jpg</path>
+            <!-- <path>./_assets/themes/${system.name}/background.jpg</path> -->
+            <!-- <path>./_assets/arts/${system.name}.jpg</path> -->
+            <opacity>0</opacity>
+            <scale>2</scale>
+            <scaleOrigin>0.5 0.5</scaleOrigin>
+            <zIndex>10</zIndex>
+
+            <storyboard>
+                <animation property="opacity" from="0" to="1" duration="2500" mode="easeOut" />
+                <animation property="scale" from="2" to="1" duration="600" mode="easeOut" />
+            </storyboard>
+        </image>
+
+        <image name="overlay" extra="static">
+            <origin>0 0</origin>
+            <pos>0 0</pos>
+            <size>1 1</size>
+            <path>./_assets/_parts/overlay.png</path>
+            <opacity>0</opacity>
+            <zIndex>15</zIndex>
+
+            <storyboard>
+                <animation property="opacity" from="0" to="1" duration="1000" mode="easeOut" />
+            </storyboard>
+        </image>
+
+        <image name="systemlogo" extra="static">
+            <origin>0 0</origin>
+            <pos>0.225 0.05</pos>
+            <maxSize>0.3 0.35</maxSize>
+            <linearSmooth>true</linearSmooth>
+            <path>./_assets/themes/${system.name}/logo.png</path>
+            <opacity>0</opacity>
+            <scale>2</scale>
+            <scaleOrigin>0.5 0.5</scaleOrigin>
+            <rotation>-3</rotation>
+            <zIndex>21</zIndex>
+
+            <storyboard>
+                <animation property="scale" from="2" to="1" begin="1000" duration="950" mode="easeOut" />
+                <animation property="opacity" from="0" to="1" begin="1500" duration="750" />
+            </storyboard>
+        </image>
+
+        <image name="char" extra="static">
+            <origin>1 0</origin>
+            <pos>1.99 0</pos>
+            <size>0 1</size>
+            <linearSmooth>true</linearSmooth>
+            <path>./_assets/themes/${system.name}/char.png</path>
+            <zIndex>20</zIndex>
+
+            <storyboard>
+                <animation property="x" from="1.99" to="1" begin="900" duration="500" mode="easeOut" />
+                <animation property="opacity" from="0" to="1" begin="100" duration="300" />
+            </storyboard>
+        </image>
+
+        <image name="char2" extra="static">
+            <origin>0 1</origin>
+            <pos>-0.99 1</pos>
+            <size>0 1</size>
+            <linearSmooth>true</linearSmooth>
+            <path>./_assets/systems/${system.name}.png</path>
+            <path>./_assets/themes/${system.name}/char2.png</path>
+            <zIndex>20</zIndex>
+
+            <storyboard>
+                <animation property="x" from="-0.99" to="0" begin="900" duration="500" mode="easeOut" />
+                <animation property="opacity" from="0" to="1" begin="100" duration="300" />
+            </storyboard>
+        </image>
+
+        <image name="bezel" extra="static">
+            <origin>0 0</origin>
+            <pos>0.1075 0.07</pos>
+            <!-- size 16:9 -->
+            <size>0.58 0.675</size>
+            <path>./_assets/themes/${system.name}/bezel.png</path>
+            <opacity>0</opacity>
+            <scale>2</scale>
+            <scaleOrigin>0.5 0.5</scaleOrigin>
+            <rotation>-3</rotation>
+            <zIndex>16</zIndex>
+
+            <storyboard>
+                <animation property="opacity" from="0" to="1" begin="1500" duration="550" />
+                <animation property="scale" from="2" to="1" begin="1000" duration="750" mode="easeOut" />
+            </storyboard>
+        </image>
+
+        <video name="video" extra="static">
+            <origin>0 0</origin>
+            <pos>0.15 0.16</pos>
+            <size>0.5156 0.7074</size>
+            <size>0.5 0.5</size>
+            <path>{random}</path>
+            <!-- <roundCorners>25</roundCorners> -->
+            <showSnapshotNoVideo>false</showSnapshotNoVideo>
+            <showSnapshotDelay>false</showSnapshotDelay>
+            <opacity>0</opacity>
+            <scale>2</scale>
+            <scaleOrigin>0.5 0.5</scaleOrigin>
+            <rotation>-3</rotation>
+            <zIndex>15</zIndex>
+
+            <storyboard>
+                <animation property="opacity" from="0" to="1" begin="1500" duration="550" />
+                <animation property="scale" from="2" to="1" begin="1000" duration="750" mode="easeOut" />
+                <!-- <animation property="rotation" from="0" to="-3" begin="1500" duration="350" mode="easeOut" /> -->
+            </storyboard>
+        </video>
+
+        <!-- Número de Games -->
+        <text name="systemInfo">
+            <zIndex>0</zIndex>
+        </text>
+
+        <text name="systeminfo_gamecc" extra="true">
+            <origin>0 0</origin>
+            <pos>0.02 0.95</pos>
+            <size> 0.04</size>
+            <text>{binding:total} games ${system}</text>
+            <text if="${system.name} == 'retrobat'">{binding:total} sistemas</text>
+            <fontPath>./_assets/fonts/lemon.otf</fontPath>
+            <fontSize>0.022</fontSize>
+            <color>FFFFFFFF</color>
+            <glowColor>000000</glowColor>
+            <glowSize>2</glowSize>
+            <glowOffset>1</glowOffset>
+            <alignment>center</alignment>
+            <verticalAlignment>center</verticalAlignment>
+            <opacity>0</opacity>
+            <zIndex>95</zIndex>
+
+            <storyboard>
+                <animation property="opacity" from="0" to="1" duration="1200" mode="EaseIn" />
+            </storyboard>
+        </text>
+
+    </view>
+
+</theme>

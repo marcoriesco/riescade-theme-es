@@ -1,0 +1,109 @@
+<!--
+
+    ███████   ██ ████████  ████████   ██████      ██     ███████   ████████
+    ░██░░░░██ ░██░██░░░░░  ██░░░░░░   ██░░░░██    ████   ░██░░░░██ ░██░░░░░ 
+    ░██   ░██ ░██░██      ░██        ██    ░░    ██░░██  ░██    ░██░██      
+    ░███████  ░██░███████ ░█████████░██         ██  ░░██ ░██    ░██░███████ 
+    ░██░░░██  ░██░██░░░░  ░░░░░░░░██░██        ██████████░██    ░██░██░░░░  
+    ░██  ░░██ ░██░██             ░██░░██    ██░██░░░░░░██░██    ██ ░██      
+    ░██   ░░██░██░████████ ████████  ░░██████ ░██     ░██░███████  ░████████
+    ░░     ░░ ░░ ░░░░░░░░ ░░░░░░░░    ░░░░░░  ░░      ░░ ░░░░░░░   ░░░░░░░░  
+
+	author: RIESCADE
+    version: 3.0.1
+    -
+    https://youtube.com/@riescade
+    https://facebook.com/riescade
+    https://discord.gg/cR3T4wkjyQ
+
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<theme defaultView="gamecarousel">
+    <formatVersion>7</formatVersion>
+
+    <!-- ICONSETS -->
+    <include name="DEFAULT">./_assets/iconsets/default.xml</include>
+
+
+    <!-- VIDEO THEME CINEMATIC SYSTEM -->
+    <subset name="logo_carousel" displayName="subsets/LOGOS">
+        <include name="riescade" />
+        <include name="black" />
+        <include name="silver" />
+        <include name="clean" />
+        <include name="glass" />
+    </subset>
+
+    <!-- PONTEIROS NA ROLETA -->
+    <subset name="pointer_system" displayName="POINTERS NA ROLETA">
+        <include name="Ativo" />
+        <include name="Desativado" />
+    </subset>
+
+    <!-- PONTEIROS NA ROLETA -->
+    <subset name="pointer_gamelist" displayName="POINTERS NA ROLETA" appliesTo="gamelist">
+        <include name="Ativo" />
+        <include name="Desativado" />
+    </subset>
+    <!-- VIDEO GAMELIST -->
+    <subset name="video_gamelist" displayName="GAMEPLAY" appliesTo="gamelist">
+        <include name="Ativo" />
+        <include name="Desativado" />
+    </subset>
+
+    <!-- VIDEO THEME CINEMATIC GAMELIST -->
+    <subset name="video_cinematic" displayName="VIDEO THEMES" appliesTo="gamelist">
+        <include name="Ativo" />
+        <include name="Desativado" />
+    </subset>
+
+    <!-- TRANSIÇÕES ENTRE THEMES CINEMATICS -->
+    <subset name="video_cinematic_transition" displayName="VIDEO TRANSITIONS" appliesTo="gamelist">
+        <include name="Ativo" />
+        <include name="Desativado" />
+    </subset>
+
+    <!-- ARCADE GAMELIST: THEME DEFAULT -->
+    <subset name="arcade_gamelist" displayName="ARCADE: THEME DEFAULT" appliesTo="gamelist">
+        <include name="Ativo" />
+        <include name="Desativado" />
+    </subset>
+
+
+    <feature supported="carousel">
+        <view name="system">
+            <sound name="bgsound"></sound>
+        </view>
+    </feature>
+
+
+    <include name="menu">./_views/common/menu.xml</include>
+    <include name="menu">./_views/common/screen.xml</include>
+
+    <include name="system">./_views/riescade_system.xml</include>
+
+    <include ifSubset="logo_carousel:riescade" name="system">./_views/subsets/logos/riescade.xml</include>
+    <include ifSubset="logo_carousel:black" name="system">./_views/subsets/logos/black.xml</include>
+    <include ifSubset="logo_carousel:silver" name="system">./_views/subsets/logos/silver.xml</include>
+    <include ifSubset="logo_carousel:clean" name="system">./_views/subsets/logos/clean.xml</include>
+    <include ifSubset="logo_carousel:glass" name="system">./_views/subsets/logos/glass.xml</include>
+
+    <include name="gamecarousel">./_views/riescade_gamelist.xml</include>
+
+    <!--
+    Theme: es-theme-carbon
+    author: Fabrice CARUSO
+    license: creative commons CC-BY-NC-SA
+    originally based on: "Carbon" by Eric Hettervik (Rookervik)
+    originally based on: "simple" by nils bonenberger
+    -->
+    <include name="grid">./_views/common/grid.xml</include>
+    <include>./_views/common/content.xml</include>
+    <include>./_views/common/${system.theme}.xml</include>
+
+    <!-- LOAD CUSTOM SYSTEM THEMES -->
+    <include>./_assets/themes/${system.theme}/theme.xml</include>
+
+</theme>

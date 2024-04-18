@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+    <formatVersion>7</formatVersion>
+
+    <view name="screen">
+
+        <!-- controllerActivity -->
+        <controllerActivity name="controllerActivity">
+            <visible>false</visible>
+        </controllerActivity>
+
+        <!-- Clock -->
+        <text name="clock">
+            <visible>false</visible>
+        </text>
+
+    </view>
+
+</theme>
