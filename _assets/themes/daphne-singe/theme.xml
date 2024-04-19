@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+    <formatVersion>7</formatVersion>
+
+    <view name="system">
+
+        <control name="video, bezel, systemlogo">
+            <rotation>0</rotation>
+        </control>
+
+        <image name="systemlogo" extra="static">
+            <pos>0.335 0.05</pos>
+        </image>
+
+        <image name="bezel" extra="static">
+            <pos>0.1765 0.07</pos>
+            <size>0.57 0.67</size>
+        </image>
+
+        <video name="video" extra="static">
+            <pos>0.24 0.16</pos>
+            <size>0.44 0.5</size>
+        </video>
+
+    </view>
+
+</theme>
