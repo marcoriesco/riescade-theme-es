@@ -178,7 +178,6 @@
             <pos>-0.99 1</pos>
             <size>0 1</size>
             <linearSmooth>true</linearSmooth>
-            <path>./_assets/systems/${system.name}.png</path>
             <path>./_assets/themes/${system.name}/char2.png</path>
             <zIndex>20</zIndex>
 
@@ -213,6 +212,7 @@
             <size>0.49 0.49</size>
             <path>{random}</path>
             <path>./_assets/themes/${system.name}/snap.mp4</path>
+            <delay>1.5</delay>
             <showSnapshotNoVideo>false</showSnapshotNoVideo>
             <showSnapshotDelay>false</showSnapshotDelay>
             <opacity>0</opacity>
@@ -220,6 +220,29 @@
             <scaleOrigin>0.5 0.5</scaleOrigin>
             <rotation>-3</rotation>
             <zIndex>15</zIndex>
+
+            <storyboard>
+                <animation property="opacity" from="0" to="1" begin="1500" duration="550" />
+                <animation property="scale" from="2" to="1" begin="1000" duration="750" mode="easeOut" />
+                <!-- <animation property="rotation" from="0" to="-3" begin="1500" duration="350" mode="easeOut" /> -->
+            </storyboard>
+        </video>
+
+        <video name="video_loading" extra="static">
+            <origin>0 0</origin>
+            <pos>0.158 0.16</pos>
+            <!-- size 16:9 -->
+            <size>0.49 0.49</size>
+            <path>{random}</path>
+            <path>./_assets/_parts/loading.mp4</path>
+            <delay>0</delay>
+            <showSnapshotNoVideo>false</showSnapshotNoVideo>
+            <showSnapshotDelay>false</showSnapshotDelay>
+            <opacity>0</opacity>
+            <scale>2</scale>
+            <scaleOrigin>0.5 0.5</scaleOrigin>
+            <rotation>-3</rotation>
+            <zIndex>14</zIndex>
 
             <storyboard>
                 <animation property="opacity" from="0" to="1" begin="1500" duration="550" />
