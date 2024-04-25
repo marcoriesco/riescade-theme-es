@@ -11,7 +11,6 @@
             <storyboard>
                 <animation property="scale" from="2" to="1" begin="1000" duration="950" mode="easeOut" />
                 <animation property="opacity" from="0" to="1" begin="1500" duration="750" />
-                <!-- <animation property="x" from="0.5" to="0.40" begin="4000" duration="500" mode="easeOut" /> -->
             </storyboard>
         </image>
 
@@ -23,7 +22,6 @@
 
             <storyboard>
                 <animation property="x" from="0.767" to="0.767" begin="0" duration="500" mode="easeOut" />
-                <!-- <animation property="x" from="0.867" to="0.757" begin="4000" duration="500" mode="easeOut" /> -->
                 <animation property="y" from="1.5" to="0.435" begin="2000" duration="500" mode="easeOut" />
             </storyboard>
         </image>
@@ -36,7 +34,6 @@
 
             <storyboard>
                 <animation property="x" from="0.035" to="0.035" begin="0" duration="500" mode="easeOut" />
-                <!-- <animation property="x" from="0.135" to="0.025" begin="4000" duration="500" mode="easeOut" /> -->
                 <animation property="y" from="-0.5" to="0.495" begin="2000" duration="500" mode="easeOut" />
             </storyboard>
         </image>
@@ -77,7 +74,6 @@
             <storyboard>
                 <animation property="opacity" from="0" to="1" begin="1500" duration="550" />
                 <animation property="scale" from="2" to="1" begin="1000" duration="750" mode="easeOut" />
-                <!-- <animation property="x" from="0.5" to="0.39" begin="4000" duration="500" mode="easeOut" /> -->
             </storyboard>
         </image>
 
@@ -89,7 +85,6 @@
             <storyboard>
                 <animation property="opacity" from="0" to="1" begin="1500" duration="550" />
                 <animation property="scale" from="2" to="1" begin="1000" duration="750" mode="easeOut" />
-                <!-- <animation property="x" from="0.5" to="0.39" begin="4000" duration="500" mode="easeOut" /> -->
             </storyboard>
         </video>
 

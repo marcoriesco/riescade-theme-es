@@ -123,30 +123,6 @@
             </storyboard>
         </video>
 
-        <!-- Video Themes Cinematics -->
-        <video ifSubset="video_cinematic:Ativo" name="md_theme" extra="true">
-            <origin>0 0</origin>
-            <pos>0 0</pos>
-            <size>1 1</size>
-            <delay>0.1</delay>
-            <effect>none</effect>
-            <path>./../../../../../roms/$system/medium_artwork/theme/{game:stem}.mp4</path>
-            <path if="${system.collection}">./../_assets/themes/collections/{game:name}.mp4</path>
-            <zIndex>40</zIndex>
-        </video>
-
-        <!-- Video Theme Transition -->
-        <video ifSubset="video_cinematic:Ativo" name="md_video_transitions" extra="true">
-            <origin>0 0</origin>
-            <pos>0 0</pos>
-            <size>1 1</size>
-            <delay>0.1</delay>
-            <effect>none</effect>
-            <loops>0</loops>
-            <path ifSubset="video_cinematic_transition:Ativo">./../_assets/transitions/$system/{game:stem}.flv</path>
-            <zIndex>99</zIndex>
-        </video>
-
         <!-- Background Default -->
         <image name="background_default" extra="true">
             <origin>0 0</origin>
@@ -201,6 +177,7 @@
             <maxSize if="${system.name} == '3do-japan'">0.3 0.4</maxSize>
             <maxSize if="${system.name} == 'snes'">0.3 0.4</maxSize>
             <maxSize if="${system.name} == 'ngage'">0.3 0.4</maxSize>
+            <maxSize if="${system.name} == 'neogeocd'">0.3 0.4</maxSize>
 
             <rotation>-4</rotation>
             <zIndex>18</zIndex>
@@ -254,9 +231,9 @@
         <text name="md_name">
             <origin>0 0</origin>
             <pos>0.028 0.77</pos>
-            <size>0.5 0.10</size>
+            <size>0.75 0.10</size>
             <fontPath>./_assets/fonts/lemon.otf</fontPath>
-            <fontSize>0.044</fontSize>
+            <fontSize>0.04</fontSize>
             <color>FFFFFFFF</color>
             <glowColor>000000</glowColor>
             <glowSize>2</glowSize>

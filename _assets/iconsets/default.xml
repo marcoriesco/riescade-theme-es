@@ -23,4 +23,12 @@
 		</helpsystem>
 	</view>
 
+	<view name="grid">
+		<helpsystem name="help">
+			<pos>999 999</pos>
+			<visible>false</visible>
+			<zIndex>0</zIndex>
+		</helpsystem>
+	</view>
+
 </theme>

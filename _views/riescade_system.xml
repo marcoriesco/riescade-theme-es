@@ -224,7 +224,6 @@
             <storyboard>
                 <animation property="opacity" from="0" to="1" begin="1500" duration="550" />
                 <animation property="scale" from="2" to="1" begin="1000" duration="750" mode="easeOut" />
-                <!-- <animation property="rotation" from="0" to="-3" begin="1500" duration="350" mode="easeOut" /> -->
             </storyboard>
         </video>
 
@@ -247,7 +246,6 @@
             <storyboard>
                 <animation property="opacity" from="0" to="1" begin="1500" duration="550" />
                 <animation property="scale" from="2" to="1" begin="1000" duration="750" mode="easeOut" />
-                <!-- <animation property="rotation" from="0" to="-3" begin="1500" duration="350" mode="easeOut" /> -->
             </storyboard>
         </video>
 
